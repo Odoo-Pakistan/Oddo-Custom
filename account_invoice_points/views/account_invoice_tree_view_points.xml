@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--
+            Vista tree con el saldo de puntos de los clientes
+        -->
+        <record id="invoice_tree_summary_points" model="ir.ui.view">
+            <field name="name">account.invoice.tree.summary.points</field>
+            <field name="model">account.invoice</field>
+            <field name="arch" type="xml">
+                <tree colors="blue:state == 'draft';black:state in ('proforma','proforma2','open');gray:state == 'cancel'" string="Invoice">
+                    <field name="partner_id" groups="base.group_user"/>
+                    <field name="commercial_partner_id" invisible="1"/>
+                    <field name="date_invoice"/>
+                    <field name="number"/>
+                    <field name="reference" invisible="1"/>
+                    <field name="name" invisible="1"/>
+                    <field name="journal_id" invisible="1"/>
+                    <field name="period_id" invisible="1" groups="account.group_account_user"/>
+                    <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                    <field name="user_id" string="Responsible"/>
+                    <field name="date_due"/>
+                    <field name="origin"/>
+                    <field name="amount_untaxed" sum="Untaxed Amount"/>
+                    <field name="amount_total" sum="Total Amount"/>
+                    <field name="points" sum="Total Points"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--Vista Filtro Listado clientes puntos-->
+        <record id="view_account_invoice_filter_points" model="ir.ui.view">
+            <field name="name">account.invoice.points</field>
+            <field name="model">account.invoice</field>
+            <field name="arch" type="xml">
+                <search string="Search Invoice Points">
+                    <field name="number" string="Invoice" filter_domain="['|','|','|', ('number','ilike',self), ('origin','ilike',self), ('supplier_invoice_number', 'ilike', self), ('partner_id', 'child_of', self)]"/>
+                    <filter name="draft" string="Draft" domain="[('state','=','draft')]" help="Draft Invoices"/>
+                    <filter name="proforma" string="Proforma" domain="[('state','=','proforma2')]" help="Proforma Invoices"/>
+                    <filter name="invoices" string="Invoices" domain="[('state','not in',['draft','cancel'])]" help="Proforma/Open/Paid Invoices"/>
+                    <filter name="unpaid" string="Unpaid" domain="[('state','=','open')]" help="Unpaid Invoices"/>
+                    <separator/>
+                    <field name="partner_id" operator="child_of"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                    	<filter name="group_by_partner_id" string="Partner" context="{'group_by':'partner_id'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+        <!--Accion para mostrar la vista de clientes con el saldo de puntos-->
+        <record id="action_invoice_tree_summary_points" model="ir.actions.act_window">
+            <field name="name">Invoices Summary Points</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="invoice_tree_summary_points"/>
+            <field name="domain">[('type','=','out_invoice')]</field>
+            <field name="context">{'search_default_group_by_partner_id':1, 'search_default_invoices':1, 'type':'out_invoice'}</field>
+            <field name="search_view_id" ref="view_account_invoice_filter_points"/>
+        </record>
+
+        <!--Menu para el listado de clientes y saldo de puntos-->
+        <menuitem action="action_invoice_tree_summary_points"
+                  id="menu_invoice_tree_summary_points"
+                  parent="account.menu_finance_receivables"
+                  sequence="100"/>
+
+       <!-- Update account invoice list view!-->
+        <record model="ir.ui.view" id="account_invoice_tree_points">
+            <field name="name">Account Invoice Points</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='amount_total']" position="after">
+                        <field name="points" string="Points" sum="Total Points"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>

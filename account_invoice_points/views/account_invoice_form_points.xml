@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="account_invoice_form_points">
+            <field name="name">view.invoice.form.points</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+                <field name="amount_total" position="after">
+                    <field name="points" />
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

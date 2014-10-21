@@ -1,0 +1,154 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_invoice_points
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-05 16:58+0000\n"
+"PO-Revision-Date: 2014-10-05 16:58+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Category of Product"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Draft"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Draft Invoices"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Group By"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.invoice_tree_summary_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+#: model:ir.model,name:account_invoice_points.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Invoices"
+msgstr ""
+
+#. module: account_invoice_points
+#: model:ir.actions.act_window,name:account_invoice_points.action_invoice_tree_summary_points
+#: model:ir.ui.menu,name:account_invoice_points.menu_invoice_tree_summary_points
+msgid "Invoices Summary Points"
+msgstr "Facturas Resumen Puntos"
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Partner"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.account_invoice_tree_points
+#: field:account.invoice,points:0
+msgid "Points"
+msgstr "Puntos"
+
+#. module: account_invoice_points
+#: field:product.template,points_price:0
+msgid "Points Price"
+msgstr "Puntos del precio"
+
+#. module: account_invoice_points
+#: field:product.template,points_surchage:0
+msgid "Points Surchage"
+msgstr "Recargo Puntos"
+
+#. module: account_invoice_points
+#: help:account.invoice,points:0
+msgid "Points are calculated automatically whit the net price of each line."
+msgstr "Los puntos son calculados automaticamente del precio neto de la linea"
+
+#. module: account_invoice_points
+#: model:ir.model,name:account_invoice_points.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Proforma"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Proforma Invoices"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Proforma/Open/Paid Invoices"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.invoice_tree_summary_points
+msgid "Responsible"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Search Invoice Points"
+msgstr ""
+
+#. module: account_invoice_points
+#: help:product.template,points_price:0
+msgid "Specifies the % to calculate the amount of pointsaccording to the net price of the line\n"
+"Examples: (0.2 add 20%), (-0,2 discounts 20%)"
+msgstr "Especifica el % para el calculo de puntos en funcion del precio neto de la linea\n"
+"Ejemplos: (0.2 añade 20%), (-0.2 descuenta 20%)"
+
+#. module: account_invoice_points
+#: help:product.template,points_surchage:0
+msgid "Specify the fixed amount to add or substract(if negative)to the amount calculated with the net price."
+msgstr "Especifica la cantidad de puntos a ñadir o restar(si es negativo) en la cantidad calculada del precio neto."
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Status"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.invoice_tree_summary_points
+msgid "Total Amount"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.account_invoice_tree_points
+#: view:account.invoice:account_invoice_points.invoice_tree_summary_points
+msgid "Total Points"
+msgstr "Total Puntos"
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Unpaid"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
+msgid "Unpaid Invoices"
+msgstr ""
+
+#. module: account_invoice_points
+#: view:account.invoice:account_invoice_points.invoice_tree_summary_points
+msgid "Untaxed Amount"
+msgstr ""
+
