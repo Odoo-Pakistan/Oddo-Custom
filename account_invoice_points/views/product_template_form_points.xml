@@ -8,13 +8,13 @@
             <field name="inherit_id" ref="product.product_template_form_view" />
             <field name="arch" type="xml">
                 <group name="sale" position="after">
-                    <group col="6" colspan="5">
-                        <label string="Calculation Points ="/>
-                        <label string="Net Price"/>
-                        <label string="* ( "/>
+                    <group col="6" colspan="4">
+                        <label string="Calculation Points = Net Price * ("/>
                         <field name="points_price" nolabel="1"/>
                         <label string=" ) + "/>
                         <field name="points_surchage" nolabel="1"/>
+                        <p></p>
+                        <p></p>
                     </group>
                 </group>
             </field>

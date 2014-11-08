@@ -21,7 +21,7 @@ class ProductTemplatePoints(models.Model):
 
     points_price = fields.Float(string="Points Price", digits=(6, 2), store=True,
                             help="Specifies the % to calculate the amount of points"\
-                                    "according to the net price of the line\n"\
+                                    "according to the net price of the line \n"\
                                     "Examples: (0.2 add 20%), (-0,2 discounts 20%)")
     points_surchage = fields.Float(string="Points Surchage", digits=(12, 2), store=True,
                             help="Specify the fixed amount to add or substract(if negative)"\

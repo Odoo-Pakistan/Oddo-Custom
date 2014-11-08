@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+            id="report_sale_order_behingoz"
+            string="Presupuesto / Pedido Behingoz"
+            model="sale.order"
+            report_type="qweb-pdf"
+            file="custom_behingoz.report_saleorder_behingoz"
+            name="custom_behingoz.report_saleorder_behingoz"
+        />
+        <report
+            id="action_report_picking_behingoz"
+            string="Picking Behingoz"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            file="custom_behingoz.report_picking_behingoz"
+            name="custom_behingoz.report_picking_behingoz"
+        />
+        <report
+            id="account_invoices_behingoz"
+            model="account.invoice"
+            string="Invoices Behingoz"
+            report_type="qweb-pdf"
+            attachment_use="True"
+            attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+            name="custom_behingoz.report_invoice_behingoz"
+            file="custom_behingoz.report_invoice_behingoz"
+        />
+    </data>
+</openerp>

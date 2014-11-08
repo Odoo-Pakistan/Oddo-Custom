@@ -16,24 +16,19 @@
 #
 ##############################################################################
 {
-    "name": "Sale Pricelist Of The Last Sale",
+    "name": "Sale pricelist of the last sale invoice",
+    "summary": "",
     "version": "1.0",
-    "depends": [
-        "sale",
-        "account",
-    ],
     "author": "bilbonet.NET",
-    "contributors": [
-        "Jesus Ramiro Martinez <jesus@bilbonet.net>",
-    ],
+    "contributors": ["Jesus Ramiro Martinez <jesus@bilbonet.net>",],
+    "license": "AGPL-3",
     "category": "Custom Module",
     "website": "http://www.bilbonet.net",
     "complexity": "normal",
-    "summary": "",
     "description": """
-This module allows to apply in sale order lines
-the last price in previous seles of the client.
+    This module allows to apply in sale order lines the last price in previous sales of the client.
     """,
+    "depends": ["sale","account",],
     "data": [
 
     ],

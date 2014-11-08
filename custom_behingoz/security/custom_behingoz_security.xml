@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <!-- Grupos -->
+        <record id="group_gerencia" model="res.groups">
+            <field name="name">Gerencia</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_sale_manager'))]"/>
+        </record>
+
+        <!-- Reglas -->
+        <record id="partner_view_onlymyown_rule" model="ir.rule">
+            <field name="name">Mostrar solo mis empresas</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="domain_force">[('user_id','=',user.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_sale_salesman'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        <record id="partner_view_all_rule" model="ir.rule">
+            <field name="name">Mostrar todas las empresas</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="domain_force">['|',('user_id','=',False), ('user_id', '!=',False)]</field>
+            <field name="groups" eval="[(4, ref('base.group_sale_manager'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <!-- Menus -->
+        <record model='ir.ui.menu' id='product.menu_products_category'>
+            <field name="groups_id" eval="[(4,ref('base.group_sale_manager'))]"/>
+        </record>
+        <record model='ir.ui.menu' id='product.menu_product_category_action_form'>
+            <field name="groups_id" eval="[(4,ref('base.group_sale_manager'))]"/>
+        </record>
+    </data>
+</openerp>

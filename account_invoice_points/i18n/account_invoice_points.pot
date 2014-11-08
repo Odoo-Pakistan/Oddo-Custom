@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-05 16:58+0000\n"
-"PO-Revision-Date: 2014-10-05 16:58+0000\n"
+"POT-Creation-Date: 2014-11-08 19:05+0000\n"
+"PO-Revision-Date: 2014-11-08 19:05+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: account_invoice_points
-#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
-msgid "Category of Product"
+#: view:product.template:account_invoice_points.product_template_form_points
+msgid "Calculation Points = Net Price * ("
 msgstr ""
 
 #. module: account_invoice_points
@@ -111,18 +111,13 @@ msgstr ""
 
 #. module: account_invoice_points
 #: help:product.template,points_price:0
-msgid "Specifies the % to calculate the amount of pointsaccording to the net price of the line\n"
+msgid "Specifies the % to calculate the amount of pointsaccording to the net price of the line \n"
 "Examples: (0.2 add 20%), (-0,2 discounts 20%)"
 msgstr ""
 
 #. module: account_invoice_points
 #: help:product.template,points_surchage:0
 msgid "Specify the fixed amount to add or substract(if negative)to the amount calculated with the net price."
-msgstr ""
-
-#. module: account_invoice_points
-#: view:account.invoice:account_invoice_points.view_account_invoice_filter_points
-msgid "Status"
 msgstr ""
 
 #. module: account_invoice_points

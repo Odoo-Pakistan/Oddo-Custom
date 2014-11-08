@@ -18,17 +18,19 @@
 
 {
     "name": "Calculate Points in Sale invoices",
-    "version": "0.1",
-    "author": "Bilbonet.NET",
-    "website": "http://www.bilbonet.net",
-    "category": "account",
-    "description": """
-    Calculate Points in Sale invoices
-    """,
+    "summary": "",
+    "version": "1.0",
+    "author": "bilbonet.NET",
+    "contributors": ["Jesus Ramiro Martinez <jesus@bilbonet.net>",],
     "license": "AGPL-3",
-    "depends": [
-        "sale", "account",
-    ],
+    "category": "Custom Module",
+    "website": "http://www.bilbonet.net",
+    "complexity": "normal",
+    "description": """
+    In the product form set parameters of the calculation formula.
+    In invoice sales the points are calculated according to the formula.
+    """,
+    "depends": ["sale", "product",],
     "data": [
         "views/product_template_form_points.xml",
         "views/account_invoice_form_points.xml",
