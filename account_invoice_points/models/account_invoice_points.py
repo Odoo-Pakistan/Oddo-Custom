@@ -21,11 +21,12 @@ class AccountInvoicePoints(models.Model):
     _inherit = 'account.invoice'
 
     @api.multi
-    @api.depends('invoice_line.price_subtotal', 'invoice_line.product_id.product_tmpl_id.points_price', 'invoice_line.product_id.product_tmpl_id.points_surchage')
+    @api.depends('invoice_line.price_subtotal')
     def _get_points(self):
         points = 0.0
-        for line in self.invoice_line:
-            points += (line.price_subtotal * line.product_id.product_tmpl_id.points_price) + line.product_id.product_tmpl_id.points_surchage
+        if self.type == 'out_invoice':
+            for line in self.invoice_line:
+                points += (line.price_subtotal * line.product_id.product_tmpl_id.points_price) + line.product_id.product_tmpl_id.points_surchage
         self.points = points
 
     points = fields.Float(string='Points', compute=_get_points, readonly=True, digits=(12, 2),

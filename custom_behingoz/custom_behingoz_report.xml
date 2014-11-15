@@ -22,7 +22,7 @@
             model="account.invoice"
             string="Invoices Behingoz"
             report_type="qweb-pdf"
-            attachment_use="True"
+            attachment_use="False"
             attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
             name="custom_behingoz.report_invoice_behingoz"
             file="custom_behingoz.report_invoice_behingoz"
