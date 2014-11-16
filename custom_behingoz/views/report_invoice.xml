@@ -128,7 +128,7 @@
             </div>
 
 
-           <div class="row" t-if="o.move_id.line_id">
+           <div class="row" t-if="o.move_id.line_id and o.type=='out_invoice'">
                 <div class="col-xs-6">
                     <table class="table table-condensed">
                         <thead>

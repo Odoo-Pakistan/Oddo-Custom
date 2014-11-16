@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-    <data>
+    <data noupdate="0">
         <report
             id="report_sale_order_behingoz"
             string="Presupuesto / Pedido Behingoz"
@@ -22,10 +22,21 @@
             model="account.invoice"
             string="Invoices Behingoz"
             report_type="qweb-pdf"
+            name="custom_behingoz.report_invoice_behingoz"
+            file="custom_behingoz.report_invoice_behingoz"
+        />
+
+        <!--
+        <report
+            id="account_invoices_behingoz"
+            model="account.invoice"
+            string="Invoices Behingoz"
+            report_type="qweb-pdf"
             attachment_use="False"
             attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
             name="custom_behingoz.report_invoice_behingoz"
             file="custom_behingoz.report_invoice_behingoz"
         />
+-->
     </data>
 </openerp>
