@@ -6,26 +6,28 @@
         <div class="page">
             <div class="oe_structure"/>
             <div class="row">
-                <div class="col-xs-6">
-                    <p t-if="o.partner_shipping_id == o.partner_invoice_id"><strong>Datos Facturación y Entrega:</strong></p>
-                    <p t-if="o.partner_shipping_id != o.partner_invoice_id"><strong>Datos Facturación:</strong></p>
-                    <div t-field="o.partner_invoice_id"
-                        t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
-                    <p t-if="o.partner_id.vat">NIF: <span t-field="o.partner_id.vat"/></p>
-                </div>
-                <div class="col-xs-5 col-xs-offset-1">
+               <div class="col-xs-6">
+                    <span t-if="o.partner_shipping_id == o.partner_invoice_id"><strong>Datos Facturación y Entrega:</strong><br/></span>
+                    <span t-if="o.partner_shipping_id != o.partner_invoice_id"><strong>Datos Facturación:</strong><br/></span>
+                    <strong><span t-field="o.partner_invoice_id.name"/></strong><br/>
+                    <span t-field='o.partner_id.street' /> <span t-field='o.partner_id.street2' /><br/>
+                    <span t-field='o.partner_id.zip' /> <span t-field='o.partner_id.city' /><br/>
+                    <span t-field='o.partner_id.state_id.name' /><br/>
+                    Telf: <span t-field='o.partner_id.phone' />
+               </div>
+               <div class="col-xs-5 col-xs-offset-1">
                     <div t-if="o.partner_shipping_id != o.partner_invoice_id">
                         <p><strong>Dirección Entraga:</strong></p>
                         <div t-field="o.partner_shipping_id"
                             t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
                         <p t-if="o.partner_id.vat">NIF: <span t-field="o.partner_id.vat"/></p>
                     </div>
-                </div>
+               </div>
             </div>
 
             <h2>
-                <span t-if="o.state not in ['draft','sent']">Pedido N°: </span>
-                <span t-if="o.state in ['draft','sent']">Presupuesto N°: </span>
+                <span t-if="o.state not in ['draft','sent']">Albarán N°: </span>
+                <span t-if="o.state in ['draft','sent']">Pedido N°: </span>
                 <span t-field="o.name"/>
             </h2>
 
@@ -35,9 +37,9 @@
                     <p t-field="o.client_order_ref"/>
                 </div>
                 <div t-if="o.date_order" class="col-xs-3">
-                    <strong t-if="o.state not in ['draft','sent']">Fecha Pedido:</strong>
-                    <strong t-if="o.state in ['draft','sent']">Fecha Presupuesto:</strong>
-                    <p t-field="o.date_order"/>
+                    <strong t-if="o.state not in ['draft','sent']">Fecha Albarán:</strong>
+                    <strong t-if="o.state in ['draft','sent']">Fecha Predido:</strong>
+                    <p t-field="o.date_order" t-field-options='{"format": "dd/MM/yyyy"}' />
                 </div>
                 <div t-if="o.user_id.name" class="col-xs-3">
                     <strong>Comercial:</strong>
@@ -114,12 +116,18 @@
                                     t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
                             </td>
                         </tr>
+                        <tr class="border-black" style="color:green;">
+                            <td><strong>Eco-Puntos</strong></td>
+                            <td class="text-right"><strong><span t-field="o.points"/></strong>
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>
 
             <p t-field="o.note" />
-
+            <h3 style="color:red;">*Consigue un eco-pack, por cada 200 eco-puntos </h3>
+            <h3 style="color:red;">*Infórmate de nuestros descuentos de hasta el 25%</h3>
             <div class="oe_structure"/>
         </div>
     </t>

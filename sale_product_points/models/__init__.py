@@ -15,26 +15,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-{
-    "name": "Calculate Points in Sale invoices",
-    "summary": "",
-    "version": "1.0",
-    "author": "bilbonet.NET",
-    "contributors": ["Jesus Ramiro Martinez <jesus@bilbonet.net>",],
-    "license": "AGPL-3",
-    "category": "Custom Module",
-    "website": "http://www.bilbonet.net",
-    "complexity": "normal",
-    "description": """
-    In the product form set parameters of the calculation formula.
-    In invoice sales the points are calculated according to the formula.
-    """,
-    "depends": ["sale", "product",],
-    "data": [
-        "views/product_template_form_points.xml",
-        "views/account_invoice_form_points.xml",
-        "views/account_invoice_tree_view_points.xml",
-    ],
-    "installable": True,
-}
+from . import product_template_points, sale_order_points, account_invoice_points
