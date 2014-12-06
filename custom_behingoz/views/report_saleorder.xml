@@ -27,7 +27,7 @@
 
             <h2>
                 <span t-if="o.state not in ['draft','sent']">Albarán N°: </span>
-                <span t-if="o.state in ['draft','sent']">Pedido N°: </span>
+                <span t-if="o.state in ['draft','sent']">Presupuesto N°: </span>
                 <span t-field="o.name"/>
             </h2>
 
@@ -38,7 +38,7 @@
                 </div>
                 <div t-if="o.date_order" class="col-xs-3">
                     <strong t-if="o.state not in ['draft','sent']">Fecha Albarán:</strong>
-                    <strong t-if="o.state in ['draft','sent']">Fecha Predido:</strong>
+                    <strong t-if="o.state in ['draft','sent']">Fecha Presupuesto:</strong>
                     <p t-field="o.date_order" t-field-options='{"format": "dd/MM/yyyy"}' />
                 </div>
                 <div t-if="o.user_id.name" class="col-xs-3">
@@ -127,7 +127,6 @@
 
             <p t-field="o.note" />
             <h3 style="color:red;">*Consigue un eco-pack, por cada 200 eco-puntos </h3>
-            <h3 style="color:red;">*Infórmate de nuestros descuentos de hasta el 25%</h3>
             <div class="oe_structure"/>
         </div>
     </t>

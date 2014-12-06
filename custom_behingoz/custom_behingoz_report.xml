@@ -3,7 +3,7 @@
     <data noupdate="0">
         <report
             id="report_sale_order_behingoz"
-            string="Pedido / Albaran Behingoz"
+            string="Presupuesto / Albaran Behingoz"
             model="sale.order"
             report_type="qweb-pdf"
             file="custom_behingoz.report_saleorder_behingoz"

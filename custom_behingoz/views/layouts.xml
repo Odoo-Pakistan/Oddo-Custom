@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="external_layout_header_behingoz" name="resize logo" inherit_id="report.external_layout_header">
+            <xpath expr="//img" position="attributes">
+                <attribute name="style">max-height: 70px;</attribute>
+            </xpath>
+       </template>
+
+        <!--
+       <template id="external_layout_header_behingoz" name="resize logo" inherit_id="report.external_layout_header">
+            <xpath expr="//img" position="replace">
+                <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 100px;"/>
+            </xpath>
+       </template>
+       -->
+    </data>
+</openerp>
+

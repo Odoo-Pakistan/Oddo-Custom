@@ -44,8 +44,8 @@ Al validar un pedido de compra se actualiza el precio coste de la ficha del arti
 
 Qweb Reports
 ====================
-* Presupuesto/Pedido de venta
-* Albaran Ventas
+* Presupuesto/Albaran de venta
+* Almacen orden de entrga
 * Factura ventas
         """,
     'data': [
@@ -55,6 +55,7 @@ Qweb Reports
         'security/ir.model.access.csv',
 
         # cargamos las vistas de los reportes
+        'views/layouts.xml',
         'views/report_saleorder.xml',
         'views/report_picking.xml',
         'views/report_invoice.xml',
