@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_company_form_message_report">
+            <field name="name">view.company.form.message.report</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form" />
+            <field name="priority" eval="30" />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Message Report" position="inside">
+                        <separator string="Message Report" colspan="4"/>
+                        <field name="message_report" nolabel="1" colspan ="4"/>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</openerp>

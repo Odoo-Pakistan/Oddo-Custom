@@ -37,6 +37,7 @@ Seguridad
 * Comerciales solo pueden ver sus propias empresas.
 * Crear grupo Gerencia.
 * Grupo Gerencia puede modificar los datos de la empresa.
+* Añadir seguridad "Caracteristicas Tecnicas" a menus de configuracion
 
 Funcionalidad
 ====================
@@ -45,11 +46,12 @@ Al validar un pedido de compra se actualiza el precio coste de la ficha del arti
 Qweb Reports
 ====================
 * Presupuesto/Albaran de venta
-* Almacen orden de entrga
+* Almacen orden de entrega
 * Factura ventas
         """,
     'data': [
         'views/product_template_form.xml',
+        'views/res_company_form.xml',
         #Seguridad
         'security/custom_behingoz_security.xml',
         'security/ir.model.access.csv',

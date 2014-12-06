@@ -18,5 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import purchase_order, res_company
+from openerp import models, fields, api, _
 
+class CompanyMessageReport(models.Model):
+    _inherit = "res.company"
+
+    message_report = fields.Html(string='Message For Reports', translate=True, store=True,
+                        help="This message will show after lines in sales reports")
